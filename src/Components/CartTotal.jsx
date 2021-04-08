@@ -2,7 +2,11 @@ import React from "react";
 import styled from "styled-components";
 
 const CartTotal = () => {
-  return <Container>Cart Total</Container>;
+  return (
+    <Container>
+      <h2>Sub total (2 items)</h2>
+    </Container>
+  );
 };
 
 export default CartTotal;

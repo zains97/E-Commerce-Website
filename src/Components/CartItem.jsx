@@ -4,7 +4,6 @@ import styled from "styled-components";
 const CartItem = ({ id, item }) => {
   let options = [];
   for (let i = 1; i < 150; i++) {
-    console.log(i);
     options.push(<option value={i}>Qty:{i}</option>);
   }
 
