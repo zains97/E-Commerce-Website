@@ -7,11 +7,10 @@ import { Link } from "react-router-dom";
 import "../App.css";
 
 const Header = ({ cartItems }) => {
-  let itemsCount = 0;
   const getCartItems = () => {
+    let itemsCount = 0;
     cartItems.forEach((item) => {
       itemsCount += item.data.quantity;
-      console.log(itemsCount);
     });
     return itemsCount;
   };
