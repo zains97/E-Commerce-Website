@@ -4,7 +4,10 @@ import styled from "styled-components";
 const LogIn = () => {
   return (
     <Container>
-      <Content></Content>
+      <Content>
+        <WebsiteLogo></WebsiteLogo>
+        <LogInButton></LogInButton>
+      </Content>
     </Container>
   );
 };
@@ -12,3 +15,7 @@ const LogIn = () => {
 export default LogIn;
 
 const Container = styled.div``;
+
+const Content = styled.div``;
+const WebsiteLogo = styled.div``;
+const LogInButton = styled.div``;
