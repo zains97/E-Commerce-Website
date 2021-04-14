@@ -49,6 +49,12 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   border-radius: 3%;
+  :hover {
+    border: 3px solid black;
+    background-color: #c5dbe3;
+    opacity: 100%;
+    font-weight: bolder;
+  }
 `;
 
 const Title = styled.span``;

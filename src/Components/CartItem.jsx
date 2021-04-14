@@ -13,6 +13,11 @@ const CartItem = ({ id, item }) => {
       .update({ quantity: parseInt(newQuantity) });
   };
 
+  const deleteItem = (e) => {
+    e.preventDefault();
+    db.collection("cartItems").doc(id).delete();
+  };
+
   return (
     <Container>
       <ImageContainer>
@@ -31,7 +36,9 @@ const CartItem = ({ id, item }) => {
               {options}
             </select>
           </CartItemQuantityContainer>
-          <CartItemDeleteContainer>Delete</CartItemDeleteContainer>
+          <CartItemDeleteContainer onClick={deleteItem}>
+            Delete
+          </CartItemDeleteContainer>
         </CartItemInfoBottom>
       </CartItemInfo>
       <CartItemPrice>${item.price}</CartItemPrice>
@@ -94,6 +101,9 @@ const CartItemDeleteContainer = styled.div`
   color: #007185;
   margin-left: 16px;
   cursor: pointer;
+  :hover {
+    font-weight: bolder;
+  }
 `;
 
 const CartItemPrice = styled.div`
