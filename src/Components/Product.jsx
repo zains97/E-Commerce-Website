@@ -49,6 +49,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   border-radius: 3%;
+  box-shadow: 0 1px 4px #b8babf;
   :hover {
     border: 3px solid black;
     background-color: #c5dbe3;
