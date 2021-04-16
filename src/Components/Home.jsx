@@ -18,6 +18,7 @@ const Home = () => {
   };
 
   useEffect(() => {
+    document.title = "Home";
     getProducts();
   }, []);
 

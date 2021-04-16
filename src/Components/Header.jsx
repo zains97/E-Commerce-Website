@@ -62,7 +62,7 @@ const Header = ({ cartItems, signOut }) => {
           maxHeight="1%"
           onClick={signOut}
           variant="contained"
-          color="primary"
+          color="secondary"
         >
           Sign Out
         </Button>

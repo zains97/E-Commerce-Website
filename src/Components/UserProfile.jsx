@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { UserContext } from "../Context/UserContext";
 import Card from "@material-ui/core/Card";
@@ -23,6 +23,10 @@ const UserProfile = () => {
   });
 
   const classes = useStyles();
+
+  useEffect(() => {
+    document.title = "User Profile";
+  }, []);
 
   console.log(user);
   return (

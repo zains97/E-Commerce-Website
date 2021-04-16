@@ -26,6 +26,10 @@ const LogIn = () => {
       });
   };
 
+  useEffect(() => {
+    document.title = "Login";
+  }, []);
+
   return (
     <Container>
       <Content>

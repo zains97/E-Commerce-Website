@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import CartItems from "./CartItems";
 import CartTotal from "./CartTotal";
@@ -19,6 +19,10 @@ const Cart = ({ cartItems }) => {
     });
     return itemsCount;
   };
+
+  useEffect(() => {
+    document.title = "Cart";
+  }, []);
 
   return (
     <Container>

@@ -39,7 +39,7 @@ function App() {
   return (
     <Router>
       {!user ? (
-        <LogIn />
+        <LogIn cartItems={cartItems} />
       ) : (
         <Container>
           <Header signOut={signOut} cartItems={cartItems} />
