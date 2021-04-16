@@ -25,7 +25,8 @@ function App() {
 
   const signOut = () => {
     auth.signOut().then(() => {
-      user = null;
+      localStorage.removeItem("user");
+      setUser(JSON.parse(localStorage.getItem("user")));
     });
   };
 

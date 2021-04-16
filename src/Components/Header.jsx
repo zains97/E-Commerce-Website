@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 import "../App.css";
 import Button from "@material-ui/core/Button";
 
-const Header = ({ cartItems }) => {
+const Header = ({ cartItems, signOut }) => {
   const [user, setUser] = useContext(UserContext);
   const getCartItems = () => {
     let itemsCount = 0;
@@ -56,8 +56,13 @@ const Header = ({ cartItems }) => {
         </HeaderOptionCart>
       </HeaderNavItems>
       <SignOutContainer>
-        <Button variant="contained" color="primary">
-          Primary
+        <Button
+          maxHeight="1%"
+          onClick={signOut}
+          variant="contained"
+          color="primary"
+        >
+          Sign Out
         </Button>
       </SignOutContainer>
     </Container>

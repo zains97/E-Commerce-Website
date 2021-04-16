@@ -19,6 +19,7 @@ const LogIn = () => {
           isLogged: true,
         };
         setUser(newUser);
+        localStorage.setItem("user", JSON.stringify(newUser));
       })
       .catch((error) => {
         alert(error.message);
