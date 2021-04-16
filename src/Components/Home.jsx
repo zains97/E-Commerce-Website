@@ -60,4 +60,5 @@ const Content = styled.div`
   padding: 0px 10px 0px 10px;
   margin-top: -275px;
   display: flex;
+  flex-wrap: wrap;
 `;

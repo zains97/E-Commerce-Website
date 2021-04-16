@@ -50,9 +50,6 @@ function App() {
             <Route path="/cart">
               <Cart cartItems={cartItems} />
             </Route>
-            <Route path="/user">
-              <UserProfile />
-            </Route>
             <Route path="/">
               <Home />
             </Route>

@@ -7,8 +7,11 @@ import LocationOnIcon from "@material-ui/icons/LocationOn";
 import { Link } from "react-router-dom";
 import "../App.css";
 import Button from "@material-ui/core/Button";
+import { makeStyles } from "@material-ui/core/styles";
+import { Media } from "react-bootstrap";
 
 const Header = ({ cartItems, signOut }) => {
+  const classes = useStyles();
   const [user, setUser] = useContext(UserContext);
   const getCartItems = () => {
     let itemsCount = 0;
@@ -63,6 +66,7 @@ const Header = ({ cartItems, signOut }) => {
           onClick={signOut}
           variant="contained"
           color="secondary"
+          className={classes.buttonStyle}
         >
           Sign Out
         </Button>
@@ -93,6 +97,7 @@ const HeaderLogo = styled.div`
 
 const HeaderOption = styled.div`
   padding: 10px 0px 10px 20px;
+  font-size: 1.2vw;
   a {
     text-decoration: none;
     color: white;
@@ -118,7 +123,7 @@ const HeaderSearch = styled.div`
   overflow: hidden;
   margin-left: 4px;
   margin-right: 4px;
-  backgroudn-color: white;
+  background-color: white;
   :focus-within {
     box-shadow: 0 0 0 2px #f90;
   }
@@ -168,3 +173,9 @@ const SignOutContainer = styled.div`
 `;
 
 export default Header;
+
+const useStyles = makeStyles({
+  buttonStyle: {
+    fontSize: "1.2vw",
+  },
+});

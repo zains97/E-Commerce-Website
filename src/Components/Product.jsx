@@ -22,7 +22,7 @@ const Product = ({ title, price, rating, image, id }) => {
   return (
     <Container>
       <Title>{title}</Title>
-      <Price>${price}</Price>
+      <Price>Rs.{price}</Price>
       <Rating>
         {Array(rating)
           .fill()
@@ -50,11 +50,14 @@ const Container = styled.div`
   flex-direction: column;
   border-radius: 3%;
   box-shadow: 0 1px 4px #b8babf;
+  transition: 0.3s;
+  z-index: 0;
   :hover {
-    border: 3px solid black;
+    /* border: 1px solid black;
     background-color: #c5dbe3;
-    opacity: 100%;
+    opacity: 100%;*/
     font-weight: bolder;
+    transform: scale(1.03);
   }
 `;
 
@@ -69,7 +72,8 @@ const Rating = styled.div``;
 
 const Image = styled.img`
   max-height: 250px;
-  object-fit: contain;
+  object-fit: strech;
+  max-width: 250px;
 `;
 
 const AddToCartButton = styled.button`
