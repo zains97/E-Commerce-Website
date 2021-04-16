@@ -1,21 +1,24 @@
-import React from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
 import Button from "@material-ui/core/Button";
 import { auth, provider } from "../firebase";
+import { UserContext } from "../Context/UserContext";
+import { useEffect } from "react";
 
-const LogIn = (props) => {
+const LogIn = () => {
+  const [user, setUser] = useContext(UserContext);
   const signIn = () => {
     auth
       .signInWithPopup(provider)
       .then((result) => {
-        let user = result.user;
+        let _user = result.user;
         let newUser = {
-          name: user.displayName,
-          email: user.email,
-          photo: user.photoURL,
+          name: _user.displayName,
+          email: _user.email,
+          photo: _user.photoURL,
+          isLogged: true,
         };
-        console.log("New User: ", newUser);
-        props.setUser(newUser);
+        setUser(newUser);
       })
       .catch((error) => {
         alert(error.message);

@@ -1,12 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
 import SearchIcon from "@material-ui/icons/Search";
 import ShoppingBasketIcon from "@material-ui/icons/ShoppingBasket";
+import { UserContext } from "../Context/UserContext";
 import LocationOnIcon from "@material-ui/icons/LocationOn";
 import { Link } from "react-router-dom";
 import "../App.css";
 
 const Header = ({ cartItems }) => {
+  const [user, setUser] = useContext(UserContext);
   const getCartItems = () => {
     let itemsCount = 0;
     cartItems.forEach((item) => {
@@ -37,7 +39,7 @@ const Header = ({ cartItems }) => {
       </HeaderSearch>
       <HeaderNavItems>
         <HeaderOption>
-          <OptionLineOne>Hello, Zain</OptionLineOne>
+          <OptionLineOne>Hello, {user.name}</OptionLineOne>
           <OptionLineTwo>Accounts & Lists</OptionLineTwo>
         </HeaderOption>
         <HeaderOption>
