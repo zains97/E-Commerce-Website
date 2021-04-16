@@ -6,11 +6,12 @@ import Home from "./Components/Home";
 import LogIn from "./Components/LogIn";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import styled from "styled-components";
-import { db } from "./firebase";
+import { db, auth } from "./firebase";
 import { UserContext } from "./Context/UserContext";
 
 function App() {
   const [cartItems, setCartItems] = useState([]);
+  let [user, setUser] = useContext(UserContext);
 
   const getCartItems = () => {
     db.collection("cartItems").onSnapshot((snapshot) => {
@@ -22,11 +23,16 @@ function App() {
     });
   };
 
+  const signOut = () => {
+    auth.signOut().then(() => {
+      user = null;
+    });
+  };
+
   useEffect(() => {
     getCartItems();
   }, []);
 
-  let [user, setUser] = useContext(UserContext);
   console.log(user);
   return (
     <Router>
@@ -34,7 +40,7 @@ function App() {
         <LogIn />
       ) : (
         <Container>
-          <Header cartItems={cartItems} />
+          <Header signOut={signOut} cartItems={cartItems} />
           <Switch>
             <Route path="/login">
               <LogIn />

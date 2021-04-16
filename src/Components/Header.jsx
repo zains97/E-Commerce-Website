@@ -6,6 +6,7 @@ import { UserContext } from "../Context/UserContext";
 import LocationOnIcon from "@material-ui/icons/LocationOn";
 import { Link } from "react-router-dom";
 import "../App.css";
+import Button from "@material-ui/core/Button";
 
 const Header = ({ cartItems }) => {
   const [user, setUser] = useContext(UserContext);
@@ -54,6 +55,11 @@ const Header = ({ cartItems }) => {
           </Link>
         </HeaderOptionCart>
       </HeaderNavItems>
+      <SignOutContainer>
+        <Button variant="contained" color="primary">
+          Primary
+        </Button>
+      </SignOutContainer>
     </Container>
   );
 };
@@ -145,6 +151,9 @@ const CartCount = styled.div`
   font-weight: 700;
   font-size: 25px;
   color: #f08804;
+`;
+const SignOutContainer = styled.div`
+  margin-right: 10px;
 `;
 
 export default Header;
