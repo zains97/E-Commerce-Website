@@ -1,13 +1,14 @@
 import { useEffect, useState, useContext } from "react";
+import styled from "styled-components";
 import "./App.css";
 import Cart from "./Components/Cart";
 import Header from "./Components/Header";
 import Home from "./Components/Home";
 import LogIn from "./Components/LogIn";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import styled from "styled-components";
 import { db, auth } from "./firebase";
 import { UserContext } from "./Context/UserContext";
+import UserProfile from "./Components/UserProfile";
 
 function App() {
   const [cartItems, setCartItems] = useState([]);
@@ -49,7 +50,9 @@ function App() {
             <Route path="/cart">
               <Cart cartItems={cartItems} />
             </Route>
-            import styled from 'styled-components'
+            <Route path="/user">
+              <UserProfile />
+            </Route>
             <Route path="/">
               <Home />
             </Route>

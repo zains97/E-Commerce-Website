@@ -40,8 +40,10 @@ const Header = ({ cartItems, signOut }) => {
       </HeaderSearch>
       <HeaderNavItems>
         <HeaderOption>
-          <OptionLineOne>Hello, {user.name}</OptionLineOne>
-          <OptionLineTwo>Accounts & Lists</OptionLineTwo>
+          <Link to="/user">
+            <OptionLineOne>Hello, {user.name}</OptionLineOne>
+            <OptionLineTwo>Accounts & Lists</OptionLineTwo>
+          </Link>
         </HeaderOption>
         <HeaderOption>
           <OptionLineOne>Returns</OptionLineOne>
@@ -91,6 +93,10 @@ const HeaderLogo = styled.div`
 
 const HeaderOption = styled.div`
   padding: 10px 0px 10px 20px;
+  a {
+    text-decoration: none;
+    color: white;
+  }
 `;
 
 const HeaderOptionAddress = styled.div`
